@@ -1,0 +1,31 @@
+.header {
+  font-family: 'Bree Serif', serif;
+  position: relative;
+  right: 100px;
+  margin: 0px;
+  margin-top: 5px;
+  margin-left: 100px;
+  /* text-align: center; */
+}
+.header h3 {
+  text-align: center;
+}
+
+.menu-section {
+  margin-top: 0px;
+  background-color: rgba(203, 240, 199, 0.639);
+  height: 800px;
+}
+
+.content-section {
+  margin-top: 0px;
+  background-color: white;
+  height: 800px;
+}
+
+.btn {
+  margin: 10px;
+  width: 100px;
+  padding: 0px;
+  left: 2px;
+}

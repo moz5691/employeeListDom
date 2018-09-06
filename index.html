@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+
+<body>
+
+  <body>
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col s12 card-panel teal lighten-2 header">
+          <h3>Employee Manager</h3>
+        </div>
+        <div class="col s12 m2 l2 card-panel menu-section">
+          <div class="raw"></div>
+          <div class="raw"><a id="print-btn" class="waves-effect waves-light btn">print</a> </div>
+          <div class="raw"><a id="verify-btn" class="waves-effect waves-light btn">verify</a></div>
+          <div class="raw"><a id="lookup-btn" class="waves-effect waves-light btn">lookup</a></div>
+          <div class="raw"><a id="contains-btn" class="waves-effect waves-light btn">contains</a></div>
+          <div class="raw"><a id="update-btn" class="waves-effect waves-light btn">update</a></div>
+          <div class="raw"><a id="add-btn" class="waves-effect waves-light btn">add</a></div>
+          <div class="raw"><a id="delete-btn" class="waves-effect waves-light btn">delete</a></div>
+        </div>
+        <div class="col s12 m10 l10 card-panel content-section">
+          <section id="employeePage">
+
+          </section>
+          <section id="employee-result">
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+  <script src="dom.js"></script>
+  <script src="employeeList.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
