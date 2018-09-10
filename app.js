@@ -3,63 +3,85 @@
 const lookupEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
+  $('#employee-result').empty();
   $('#employeePage').append(`<div class="col s12">
   <div class="input-field inline">
     <input id="lookupName" type="text">
     <label for="name_lookup">Name</label>
     <span>Enter the name to look up</span>
-  </div> Look up </div>`);
+  </div> Look up </div>
+  <a id = "lookup-btn" class="waves-effect waves-light btn u">Look up</a>
+  `);
 
-  $('#lookupName').on('keyup', lookupEmployee);
+  $('#lookup-btn').on('click', lookupEmployee);
 };
 // verify input form rendering
+
 const verifyEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
-  $('#employeePage').append(`<div class="col s12">
-  <div class="input-field inline">
-    <input id="verifyName" type="text">
-    <label for="name_verify">Name</label>
-    <span>Enter the name to verify</span>
-  </div> Verify </div>`);
+  $('#employee-result').empty();
 
-  $('#verifyName').on('keyup', verifyEmployee);
+  $('#employeePage').append(`
+  <div class="col s12">
+    <div class="input-field inline">
+      <input id="verifyName" type="text">
+      <label for="name_verify">Name</label>
+      <span>Enter the name to verify</span>
+    </div> Verify 
+  </div>
+  </div></div>
+  <a id = "verify-btn" class="waves-effect waves-light btn u">Verify</a>
+  `);
+
+  $('#verify-btn').on('click', verifyEmployee);
 };
 // contains from rendering
 const containsEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
   $('#employee-result').empty();
-  $('#employeePage').append(`<div class="col s12">
-  <div class="input-field inline">
-    <input id="containsName" type="text">
-    <label for="name_contains">Name</label>
-    <span>Enter the name contains</span>
-  </div> Contains </div>`);
-  $('#containsName').on('keyup', containsEmployee);
+
+  $('#employeePage').append(`
+  <div class="col s12">
+    <div class="input-field inline">
+      <input id="containsName" type="text">
+      <label for="name_contains">Name</label>
+      <span>Enter the name contains</span>
+    </div> Contains 
+  </div>
+  <a id = "contains-btn" class="waves-effect waves-light btn u">Contains</a>
+  `);
+
+  $('#contains-btn').on('click', containsEmployee);
 };
 // update employee form rendering
 const updateEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
+  $('#employee-result').empty();
+
   $('#employeePage').append(`
   <div class="col s12">
   <div class="input-field inline">
     <input id="updateName" type="text">
     <label for="name_update">Name</label>
-  </div> Update </div>
+    </div> Update 
+  </div>
 
   <div class="col s12">
-  <div class="input-field inline">
-    <input id="updateOfficeNum" type="text">
-    <label for="officeNum_update">Office No.</label>
-  </div> Update </div>
+    <div class="input-field inline">
+      <input id="updateOfficeNum" type="text">
+      <label for="officeNum_update">Office No.</label>
+    </div> Update 
+  </div>
 
   <div class="col s12">
-  <div class="input-field inline">
-    <input id="updatePhoneNum" type="text">
-    <label for="phoneNum_update">Phone No.</label>
-  </div> Update </div>
+    <div class="input-field inline">
+      <input id="updatePhoneNum" type="text">
+      <label for="phoneNum_update">Phone No.</label>
+    </div> Update 
+  </div>
   <a id = "update-btn" class="waves-effect waves-light btn u">Update</a>
 `);
   $('#update-btn').on('click', updateEmployee);
@@ -68,6 +90,8 @@ const updateEmployeeMenu = event => {
 const addEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
+  $('#employee-result').empty();
+
   $('#employeePage').append(`
   <div class="col s12">
   <div class="input-field inline">
@@ -82,10 +106,11 @@ const addEmployeeMenu = event => {
   </div> Update </div>
 
   <div class="col s12">
-  <div class="input-field inline">
-    <input id="addPhoneNum" type="text">
-    <label for="phoneNum_update">Phone No.</label>
-  </div> Update </div>
+    <div class="input-field inline">
+      <input id="addPhoneNum" type="text">
+      <label for="phoneNum_update">Phone No.</label>
+    </div> Update 
+  </div>
 
   <a id = "add-btn" class="waves-effect waves-light btn u">Add</a>`);
   $('#add-btn').on('click', addEmployee);
@@ -95,6 +120,7 @@ const deleteEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
   $('#employee-result').empty();
+
   $('#employeePage').append(`
   <div class="col s12">
   <div class="input-field inline">
@@ -139,11 +165,12 @@ const lookupEmployee = event => {
   }
 };
 // verify (verify) btn handler
-const verifyEmployee = evnt => {
+const verifyEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
+  let index = 0;
   const name = $('#verifyName').val();
-  const index = employeeList.findIndex(
+  index = employeeList.findIndex(
     employee => employee.name.toLowerCase() === name.toLowerCase()
   );
   if (index > -1) {
@@ -152,6 +179,7 @@ const verifyEmployee = evnt => {
     $('#employee-result').append(`<h5>This person is NOT employeed.</h5>`);
   }
 };
+
 // contains (contains) btn handler
 const containsEmployee = event => {
   event.preventDefault();
@@ -237,10 +265,10 @@ const deleteEmployee = event => {
   }
 };
 // add eventhandler for all buttons.
-$('#print-btn').on('click', printAll);
-$('#verify-btn').on('click', verifyEmployeeMenu);
-$('#lookup-btn').on('click', lookupEmployeeMenu);
-$('#contains-btn').on('click', containsEmployeeMenu);
-$('#update-btn').on('click', updateEmployeeMenu);
-$('#add-btn').on('click', addEmployeeMenu);
-$('#delete-btn').on('click', deleteEmployeeMenu);
+$('#print-menu-btn').on('click', printAll);
+$('#verify-menu-btn').on('click', verifyEmployeeMenu);
+$('#lookup-menu-btn').on('click', lookupEmployeeMenu);
+$('#contains-menu-btn').on('click', containsEmployeeMenu);
+$('#update-menu-btn').on('click', updateEmployeeMenu);
+$('#add-menu-btn').on('click', addEmployeeMenu);
+$('#delete-menu-btn').on('click', deleteEmployeeMenu);
