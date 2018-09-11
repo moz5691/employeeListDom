@@ -1,4 +1,3 @@
 # employeeListDom
 
-vanila JS, employeeList 
-
+vanila JS, employeeList

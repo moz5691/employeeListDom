@@ -1,3 +1,4 @@
+/* reuse the libary from CJ's class */
 const $ = function(sel) {
   const nodeList = document.querySelectorAll(sel);
 
