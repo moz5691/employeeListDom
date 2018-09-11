@@ -12,11 +12,11 @@ const lookupEmployeeMenu = event => {
   </div> Look up </div>
   <a id = "lookup-btn" class="waves-effect waves-light btn u">Look up</a>
   `);
-
+  /* add btn event listener after input DOM creation */
   $('#lookup-btn').on('click', lookupEmployee);
 };
-// verify input form rendering
 
+/* start --- verify input form rendering */
 const verifyEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
@@ -36,7 +36,9 @@ const verifyEmployeeMenu = event => {
 
   $('#verify-btn').on('click', verifyEmployee);
 };
-// contains from rendering
+/* end  --- verify input form rendering */
+
+/* start --- contains from rendering */
 const containsEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
@@ -55,7 +57,9 @@ const containsEmployeeMenu = event => {
 
   $('#contains-btn').on('click', containsEmployee);
 };
-// update employee form rendering
+/* end  --- contains from rendering */
+
+/* start --- update employee form rendering */
 const updateEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
@@ -86,7 +90,9 @@ const updateEmployeeMenu = event => {
 `);
   $('#update-btn').on('click', updateEmployee);
 };
-// add employee redering
+/* end --- update employee form rendering */
+
+/* start --- add employee redering */
 const addEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
@@ -115,7 +121,9 @@ const addEmployeeMenu = event => {
   <a id = "add-btn" class="waves-effect waves-light btn u">Add</a>`);
   $('#add-btn').on('click', addEmployee);
 };
-// delete employee form rendering
+/* end --- add employee redering */
+
+/* start --- delete employee form rendering */
 const deleteEmployeeMenu = event => {
   event.preventDefault();
   $('#employeePage').empty();
@@ -131,7 +139,9 @@ const deleteEmployeeMenu = event => {
   <a id = "delete-btn" class="waves-effect waves-light btn u">Delete</a`);
   $('#delete-btn').on('click', deleteEmployee);
 };
-// print all   (print) btn handler
+/* end --- delete employee form rendering */
+
+/* start ---  print all   (print) btn handler */
 const printAll = () => {
   $('#employeePage').empty();
   $('#employee-result').empty();
@@ -142,7 +152,9 @@ const printAll = () => {
     $('#employeePage').append(`<hr/>`);
   }
 };
-// lookup (lookup) btn handler
+/* end ---  print all   (print) btn handler */
+
+/* start ---  lookup (lookup) btn handler */
 const lookupEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -164,7 +176,9 @@ const lookupEmployee = event => {
     }
   }
 };
-// verify (verify) btn handler
+/* end ---  lookup (lookup) btn handler */
+
+/* start ---  verify (verify) btn handler */
 const verifyEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -179,8 +193,9 @@ const verifyEmployee = event => {
     $('#employee-result').append(`<h5>This person is NOT employeed.</h5>`);
   }
 };
+/* end ---  verify (verify) btn handler */
 
-// contains (contains) btn handler
+/* start --- contains (contains) btn handler */
 const containsEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -203,7 +218,9 @@ const containsEmployee = event => {
     }
   }
 };
-// update (update) btn handler
+/* end --- contains (contains) btn handler */
+
+/* start ---  update (update) btn handler  */
 const updateEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -231,7 +248,9 @@ const updateEmployee = event => {
     );
   }
 };
-// add (add) btn handler
+/* end ---  update (update) btn handler  */
+
+/* start ---  add (add) btn handler */
 const addEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -248,7 +267,9 @@ const addEmployee = event => {
     } <br/> ${employeeList[addedIndex].phoneNum} <hr/>`
   );
 };
-// delete (delete) btn handler
+/* end ---  add (add) btn handler */
+
+/* start --- delete (delete) btn handler */
 const deleteEmployee = event => {
   event.preventDefault();
   $('#employee-result').empty();
@@ -264,7 +285,9 @@ const deleteEmployee = event => {
     $('#employee-result').append(`<h4>Deleted.</h4>`);
   }
 };
-// add eventhandler for all buttons.
+/* end --- delete (delete) btn handler */
+
+/* start ---  add eventhandler for all buttons. */
 $('#print-menu-btn').on('click', printAll);
 $('#verify-menu-btn').on('click', verifyEmployeeMenu);
 $('#lookup-menu-btn').on('click', lookupEmployeeMenu);
@@ -272,3 +295,4 @@ $('#contains-menu-btn').on('click', containsEmployeeMenu);
 $('#update-menu-btn').on('click', updateEmployeeMenu);
 $('#add-menu-btn').on('click', addEmployeeMenu);
 $('#delete-menu-btn').on('click', deleteEmployeeMenu);
+/* end */
